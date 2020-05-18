@@ -1,5 +1,5 @@
 import {StartGame,Level,Kong} from "./classes.js";
-import {levelOne, levelTwo,window_size} from "./constantes.js";
+import {levelOne, levelTwo} from "./constantes.js";
 
 
 let playLab = new StartGame();
@@ -11,9 +11,10 @@ playLab.titleGame(isSuccess);
 document.addEventListener("keydown",choiceLevel);
 
 
-let struct;
+
 function choiceLevel(e){
     let levelChoice;
+    let struct;
     switch(e.keyCode) {
         case 112:
             levelChoice = new Level(levelOne,ctx);
@@ -30,7 +31,6 @@ function choiceLevel(e){
         document.addEventListener("keydown",moveTheMonkey);
         let kong = new Kong(0,0,struct,ctx);
         kong.initPosition();
-        let temp = ctx.getImageData(40,40,40,40);
         function moveTheMonkey(e){
             let movement;
             switch(e.keyCode){
